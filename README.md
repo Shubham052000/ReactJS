@@ -1,6 +1,6 @@
 # Git Repo for React Projects
 
-## To run
+## To run a `react-app`
 
 ### Pre-requisites:  
 nodeJS installed with `yarn` or  `npm`  
@@ -10,7 +10,7 @@ Go to terminal traverse to the local git Repository
 -> `npm install`  // to install the dependencies  
 -> `npm start`  
   
-## with `yarn`
+#### with `yarn`
 Go to the terminal traverse to the local git Repositry
  -> `cd <app_Name>`  
  -> `yarn or yarn install` //to install the dependencies  
