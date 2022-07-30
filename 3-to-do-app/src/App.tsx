@@ -18,7 +18,12 @@ function App() {
       return [...prevTodos, p];
     });
   };
-  const removeTodoHandler = () => {};
+
+  const removeTodoHandler = (id: number) => {
+    setTodoArray((prevTodos) => {
+      return prevTodos.filter((todo) => todo.id !== id);
+    });
+  };
 
   return (
     <div className="App">
@@ -27,7 +32,10 @@ function App() {
         {createTodo ? "Close Todo form" : "Create Todo"}
       </button>
       {createTodo && <TodoForm onAddTodo={(p) => addTodoHandler(p)} />}
-      <Todos todos={todoArray} onRemove={removeTodoHandler} />
+      <Todos
+        todos={todoArray}
+        onRemove={(id: number) => removeTodoHandler(id)}
+      />
     </div>
   );
 }

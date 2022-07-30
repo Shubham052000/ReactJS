@@ -1,11 +1,18 @@
 import React from "react";
-import { todoStruct } from "../App";
 
-const Todo: React.FC<todoStruct> = (props) => {
+type TodoProps = {
+  onRemove: (id: number) => void;
+  id: number;
+  title: string;
+  description: string;
+};
+
+const Todo: React.FC<TodoProps> = (props) => {
   return (
     <li key={props.id}>
       <h3>{props.title}</h3>
       <p>{props.description}</p>
+      <button onClick={() => props.onRemove(props.id)}>Remove Todo!</button>
     </li>
   );
 };

@@ -4,7 +4,7 @@ import Todo from "./Todo";
 
 type TodosProps = {
   todos: todoStruct[];
-  onRemove: () => void;
+  onRemove: (id: number) => void;
 };
 const Todos: React.FC<TodosProps> = (props) => {
   return (
@@ -15,6 +15,7 @@ const Todos: React.FC<TodosProps> = (props) => {
             id={todo.id}
             title={todo.title}
             description={todo.description}
+            onRemove={(id: number) => props.onRemove(id)}
           />
         );
       })}
