@@ -2,7 +2,9 @@ import React, { useState } from "react";
 
 import TodoForm from "./components/TodoForm";
 import Todos from "./components/Todos";
+import FormModal from "./UI/FormModal";
 
+import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export type todoStruct = {
@@ -30,13 +32,21 @@ function App() {
   return (
     <div className="header text-center">
       <h1>The To-do app</h1>
+
       <button
-        className="btn btn-primary"
+        className="btn btn-primary mt-2"
         onClick={(event) => setCreateTodo(!createTodo)}
       >
-        {createTodo ? "Close Todo form" : "Create Todo"}
+        Create Todo
       </button>
-      {createTodo && <TodoForm onAddTodo={(p) => addTodoHandler(p)} />}
+
+      <FormModal
+        modal={createTodo}
+        toggle={(event) => setCreateTodo(!createTodo)}
+      >
+        <TodoForm onAddTodo={(p) => addTodoHandler(p)} />
+      </FormModal>
+
       <Todos
         todos={todoArray}
         onRemove={(id: number) => removeTodoHandler(id)}
