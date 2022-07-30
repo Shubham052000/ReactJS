@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import TodoForm from "./components/TodoForm";
 import Todos from "./components/Todos";
 
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export type todoStruct = {
@@ -29,7 +28,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="header text-center">
       <h1>The To-do app</h1>
       <button
         className="btn btn-primary"

@@ -28,13 +28,30 @@ const TodoForm: React.FC<TodoFormProps> = (props) => {
   return (
     <div>
       <form onSubmit={createTodoHandler}>
-        <label htmlFor={"title"}>Title</label>
-        <input type={"text"} id={"id"} ref={titleRef}></input>
-        <br />
-        <label htmlFor={"description"}>Description</label>
-        <textarea id={"description"} ref={descriptionRef}></textarea>
-        <br />
-        <button type={"submit"}>Create Todo</button>
+        <div className="d-inline-flex p-2">
+          <label className={"form-label"} htmlFor={"title"}>
+            Title
+          </label>
+          <input
+            className="form-control"
+            type={"text"}
+            id={"id"}
+            ref={titleRef}
+          ></input>
+        </div>
+        <div className="d-inline-flex p-2">
+          <label htmlFor={"description"}>Description</label>
+          <textarea
+            className="form-control"
+            id={"description"}
+            ref={descriptionRef}
+          ></textarea>
+        </div>
+        <div>
+          <button className="btn btn-outline-primary" type={"submit"}>
+            Create Todo
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -12,7 +12,12 @@ const Todo: React.FC<TodoProps> = (props) => {
     <li key={props.id}>
       <h3>{props.title}</h3>
       <p>{props.description}</p>
-      <button onClick={() => props.onRemove(props.id)}>Remove Todo!</button>
+      <button
+        className="btn btn-danger"
+        onClick={() => props.onRemove(props.id)}
+      >
+        Remove Todo!
+      </button>
     </li>
   );
 };
