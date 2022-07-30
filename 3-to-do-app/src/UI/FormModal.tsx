@@ -11,12 +11,12 @@ const FormModal: React.FC<{
     <Modal isOpen={modal} toggle={toggle}>
       <ModalHeader toggle={toggle}>Todo Form</ModalHeader>
       <ModalBody>{children}</ModalBody>
-      <ModalFooter>
-        {/* <Button color="primary">Create ToDo!!</Button> */}
+      {/* <ModalFooter>
+        <Button color="primary">Create ToDo!!</Button>
         <Button color="warning" onClick={toggle}>
           Cancel
         </Button>
-      </ModalFooter>
+      </ModalFooter> */}
     </Modal>
   );
 };
