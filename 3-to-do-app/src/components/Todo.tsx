@@ -1,4 +1,5 @@
 import React from "react";
+import Card from "../UI/Card";
 
 type TodoProps = {
   onRemove: (id: number) => void;
@@ -9,7 +10,7 @@ type TodoProps = {
 
 const Todo: React.FC<TodoProps> = (props) => {
   return (
-    <li key={props.id}>
+    <Card key={props.id}>
       <h3>{props.title}</h3>
       <p>{props.description}</p>
       <button
@@ -18,7 +19,7 @@ const Todo: React.FC<TodoProps> = (props) => {
       >
         Remove Todo!
       </button>
-    </li>
+    </Card>
   );
 };
 

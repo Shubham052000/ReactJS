@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Button, Modal, ModalHeader, ModalFooter, ModalBody } from "reactstrap";
+import { Modal, ModalHeader, ModalBody } from "reactstrap";
 
 const FormModal: React.FC<{
   modal: boolean;
@@ -11,12 +11,6 @@ const FormModal: React.FC<{
     <Modal isOpen={modal} toggle={toggle}>
       <ModalHeader toggle={toggle}>Todo Form</ModalHeader>
       <ModalBody>{children}</ModalBody>
-      {/* <ModalFooter>
-        <Button color="primary">Create ToDo!!</Button>
-        <Button color="warning" onClick={toggle}>
-          Cancel
-        </Button>
-      </ModalFooter> */}
     </Modal>
   );
 };

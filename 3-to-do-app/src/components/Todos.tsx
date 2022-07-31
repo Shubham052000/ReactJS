@@ -8,7 +8,7 @@ type TodosProps = {
 };
 const Todos: React.FC<TodosProps> = (props) => {
   return (
-    <ul>
+    <ul className="todos">
       {props.todos.map((todo) => {
         return (
           <Todo
