@@ -1,7 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { todoStruct } from "../App";
-
 const initialState = {
   todos: [
     { id: 1, title: "React", description: "Learn React basics" },
