@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { todoActions } from "./store/todo-slice";
 
 import TodoForm from "./components/TodoForm";
 import Todos from "./components/Todos";
@@ -13,20 +15,26 @@ export type todoStruct = {
   description: string;
 };
 
+type stateType = {
+  todosReducer: {
+    todos: todoStruct[];
+  };
+};
+
 function App() {
-  const [todoArray, setTodoArray] = useState<todoStruct[]>([]);
   const [createTodo, setCreateTodo] = useState(false);
+  const dispatch = useDispatch();
+
+  const todosArray = useSelector(
+    (state: stateType) => state.todosReducer.todos
+  );
 
   const addTodoHandler = (p: todoStruct) => {
-    setTodoArray((prevTodos) => {
-      return [...prevTodos, p];
-    });
+    dispatch(todoActions.addTodo(p));
   };
 
   const removeTodoHandler = (id: number) => {
-    setTodoArray((prevTodos) => {
-      return prevTodos.filter((todo) => todo.id !== id);
-    });
+    dispatch(todoActions.removeTodo(id));
   };
 
   return (
@@ -48,7 +56,7 @@ function App() {
       </FormModal>
 
       <Todos
-        todos={todoArray}
+        todos={todosArray}
         onRemove={(id: number) => removeTodoHandler(id)}
       />
     </div>
