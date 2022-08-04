@@ -1,14 +1,15 @@
 import React, { useRef, useState } from "react";
-import { todoStruct } from "../App";
 
-type TodoFormProps = {
-  onAddTodo: (p: todoStruct) => void;
-};
+import { useDispatch } from "react-redux";
+import { todoActions } from "../store/todo-slice";
 
-const TodoForm: React.FC<TodoFormProps> = (props) => {
+const TodoForm: React.FC = () => {
   const titleRef = useRef<HTMLInputElement>(null);
   const descriptionRef = useRef<HTMLTextAreaElement>(null);
+
   const [emptyFields, setEmptyFields] = useState(false);
+
+  const dispatch = useDispatch();
 
   const createTodoHandler = (event: React.FormEvent) => {
     event.preventDefault(); // Preventing the default behavior of sending request to server
@@ -24,17 +25,20 @@ const TodoForm: React.FC<TodoFormProps> = (props) => {
       return;
     }
 
-    props.onAddTodo({
-      // Sending data to App.tsx
-      id: Date.now(),
-      title: enteredTitle,
-      description: enteredDescription,
-    });
+    dispatch(
+      // Adding todo to our Redux state
+      todoActions.addTodo({
+        id: Date.now(),
+        title: enteredTitle,
+        description: enteredDescription,
+      })
+    );
 
     setEmptyFields(false); // Resetting our states and refs
     titleRef.current!.value = "";
     descriptionRef.current!.value = "";
   };
+
   return (
     <div>
       <form onSubmit={createTodoHandler}>
@@ -60,7 +64,7 @@ const TodoForm: React.FC<TodoFormProps> = (props) => {
         </div>
         {emptyFields && (
           <p className="text-danger text-center">
-            Please enter Todo and Description
+            Eyy!! Please enter Todo and Description
           </p>
         )}
         <div className="form-group text-center mt-3">

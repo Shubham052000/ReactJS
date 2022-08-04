@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { todoActions } from "./store/todo-slice";
+import { useState } from "react";
 
 import TodoForm from "./components/TodoForm";
 import Todos from "./components/Todos";
@@ -15,7 +13,7 @@ export type todoStruct = {
   description: string;
 };
 
-type stateType = {
+export type stateType = {
   todosReducer: {
     todos: todoStruct[];
   };
@@ -23,19 +21,6 @@ type stateType = {
 
 function App() {
   const [createTodo, setCreateTodo] = useState(false);
-  const dispatch = useDispatch();
-
-  const todosArray = useSelector(
-    (state: stateType) => state.todosReducer.todos
-  );
-
-  const addTodoHandler = (p: todoStruct) => {
-    dispatch(todoActions.addTodo(p));
-  };
-
-  const removeTodoHandler = (id: number) => {
-    dispatch(todoActions.removeTodo(id));
-  };
 
   return (
     <div className="header text-center">
@@ -43,22 +28,16 @@ function App() {
 
       <button
         className="btn btn-primary mt-2"
-        onClick={(event) => setCreateTodo(!createTodo)}
+        onClick={() => setCreateTodo(!createTodo)}
       >
         Create Todo
       </button>
 
-      <FormModal
-        modal={createTodo}
-        toggle={(event) => setCreateTodo(!createTodo)}
-      >
-        <TodoForm onAddTodo={(p) => addTodoHandler(p)} />
+      <FormModal modal={createTodo} toggle={() => setCreateTodo(!createTodo)}>
+        <TodoForm />
       </FormModal>
 
-      <Todos
-        todos={todosArray}
-        onRemove={(id: number) => removeTodoHandler(id)}
-      />
+      <Todos />
     </div>
   );
 }

@@ -1,21 +1,22 @@
 import React from "react";
-import { todoStruct } from "../App";
+import { stateType } from "../App";
+import { useSelector } from "react-redux";
+
 import Todo from "./Todo";
 
-type TodosProps = {
-  todos: todoStruct[];
-  onRemove: (id: number) => void;
-};
-const Todos: React.FC<TodosProps> = (props) => {
+const Todos: React.FC = () => {
+  const todosArray = useSelector(
+    (state: stateType) => state.todosReducer.todos
+  );
+
   return (
     <ul className="todos">
-      {props.todos.map((todo) => {
+      {todosArray.map((todo) => {
         return (
           <Todo
             id={todo.id}
             title={todo.title}
             description={todo.description}
-            onRemove={(id: number) => props.onRemove(id)}
           />
         );
       })}
