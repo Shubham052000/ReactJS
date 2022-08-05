@@ -40,40 +40,38 @@ const TodoForm: React.FC = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={createTodoHandler}>
-        <div className="form-group">
-          <label className={"form-label"} htmlFor={"title"}>
-            Title
-          </label>
-          <input
-            className="form-control"
-            type={"text"}
-            id={"id"}
-            ref={titleRef}
-          ></input>
-        </div>
-        <div className="form-group mt-2">
-          <label htmlFor={"description"}>Description</label>
-          <textarea
-            rows={5}
-            className="form-control"
-            id={"description"}
-            ref={descriptionRef}
-          ></textarea>
-        </div>
-        {emptyFields && (
-          <p className="text-danger text-center">
-            Eyy!! Please enter Todo and Description
-          </p>
-        )}
-        <div className="form-group text-center mt-3">
-          <button className="btn btn-outline-primary" type={"submit"}>
-            Create Todo
-          </button>
-        </div>
-      </form>
-    </div>
+    <form onSubmit={createTodoHandler}>
+      <div className="form-group">
+        <label className={"form-label"} htmlFor={"title"}>
+          Title
+        </label>
+        <input
+          className="form-control"
+          type={"text"}
+          id={"id"}
+          ref={titleRef}
+        ></input>
+      </div>
+      <div className="form-group mt-2">
+        <label htmlFor={"description"}>Description</label>
+        <textarea
+          rows={5}
+          className="form-control"
+          id={"description"}
+          ref={descriptionRef}
+        ></textarea>
+      </div>
+      {emptyFields && (
+        <p className="text-danger text-center">
+          Eyy!! Please enter Todo's title and Description
+        </p>
+      )}
+      <div className="form-group text-center mt-3">
+        <button className="btn btn-outline-primary" type={"submit"}>
+          Create Todo
+        </button>
+      </div>
+    </form>
   );
 };
 

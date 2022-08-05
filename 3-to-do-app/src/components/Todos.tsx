@@ -14,6 +14,7 @@ const Todos: React.FC = () => {
       {todosArray.map((todo) => {
         return (
           <Todo
+            key={todo.id}
             id={todo.id}
             title={todo.title}
             description={todo.description}

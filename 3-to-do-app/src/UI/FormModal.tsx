@@ -9,7 +9,7 @@ const FormModal: React.FC<{
 }> = ({ modal, toggle, children }) => {
   return (
     <Modal isOpen={modal} toggle={toggle}>
-      <ModalHeader toggle={toggle}>Todo Form</ModalHeader>
+      <ModalHeader toggle={toggle}>Create a new Todo</ModalHeader>
       <ModalBody>{children}</ModalBody>
     </Modal>
   );
