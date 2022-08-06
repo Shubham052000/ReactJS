@@ -76,7 +76,11 @@ const UpdateModal: React.FC<{
             </p>
           )}
           <div className="form-group text-center mt-3">
-            <button className="btn btn-outline-primary" type={"submit"}>
+            <button
+              className="btn btn-outline-primary"
+              type={"submit"}
+              onClick={toggle}
+            >
               Update Todo
             </button>
           </div>
