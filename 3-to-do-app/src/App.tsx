@@ -22,6 +22,16 @@ export type stateType = {
 function App() {
   const [createTodo, setCreateTodo] = useState(false);
 
+  /* 
+    TO-DO: useEffect with fetchTodoData function
+
+    const dispatch = useDispatch();
+    
+    useEffect(()=>{
+      dispatch(fetchTodoData())
+    },[dispatch]);
+
+  */
   return (
     <div className="header text-center">
       <h1>The To-do app</h1>

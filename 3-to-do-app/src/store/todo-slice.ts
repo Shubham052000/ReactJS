@@ -2,16 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 import { todoStruct } from "../App";
 
 const initialState: { todos: todoStruct[] } = {
-  todos: [
-    { id: 1, title: "React", description: "Learn React basics" },
-    { id: 2, title: "TypeScript", description: "Learn TS basics" },
-  ],
+  todos: [],
 };
 
 const todoSlice = createSlice({
   name: "todos",
   initialState,
   reducers: {
+    replaceTodos(state, { payload }) {
+      state.todos = payload.todos;
+    },
     addTodo(state, { payload }) {
       state.todos = [...state.todos, payload];
     },
