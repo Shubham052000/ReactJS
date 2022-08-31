@@ -8,6 +8,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch } from "react-redux";
 import { fetchTodoData } from "./store/todo-actions";
+import { AppDispatch } from "./store";
 
 export type todoStruct = {
   id: number;
@@ -24,14 +25,14 @@ export type stateType = {
 function App() {
   const [createTodo, setCreateTodo] = useState(false);
 
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
     /*
     To-Do: Fix this (setting types for thunks ) 
     Error: Argument of type '(dispatch: any) => Promise<void>' is not assignable to parameter of type 'AnyAction'.
+    */
     dispatch(fetchTodoData());
-     */
   }, [dispatch]);
   return (
     <div className="header text-center">

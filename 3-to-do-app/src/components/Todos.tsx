@@ -9,18 +9,20 @@ const Todos: React.FC = () => {
     (state: stateType) => state.todosReducer.todos
   );
 
+  // console.log(todosArray);
   return (
     <ul className="todos">
-      {todosArray.map((todo) => {
-        return (
-          <Todo
-            key={todo.id}
-            id={todo.id}
-            title={todo.title}
-            description={todo.description}
-          />
-        );
-      })}
+      {todosArray.length > 0 &&
+        todosArray.map((todo) => {
+          return (
+            <Todo
+              key={todo.id}
+              id={todo.id}
+              title={todo.title}
+              description={todo.description}
+            />
+          );
+        })}
     </ul>
   );
 };
