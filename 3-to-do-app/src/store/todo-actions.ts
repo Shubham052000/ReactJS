@@ -18,9 +18,10 @@ export const fetchTodoData = () => {
 
     try {
       const todoData = await fetchData();
+      console.log("Got the todo data as: ", todoData);
       dispatch(
         todoActions.replaceTodos({
-          todos: todoData.todos || [],
+          todos: todoData || [],
         })
       );
     } catch (error) {
@@ -30,6 +31,7 @@ export const fetchTodoData = () => {
 };
 
 export const sendTodoData = (todoData: any) => {
+  console.log(todoData);
   return async () => {
     const sendRequest = async () => {
       const response = await fetch(
@@ -37,7 +39,7 @@ export const sendTodoData = (todoData: any) => {
         {
           method: "PUT",
           body: JSON.stringify({
-            todos: todoData.todos,
+            ...todoData,
           }),
         }
       );

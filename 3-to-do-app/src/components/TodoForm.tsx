@@ -1,7 +1,10 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { sendTodoData } from "../store/todo-actions";
 import { todoActions } from "../store/todo-slice";
+import { AppDispatch } from "../store";
+import { stateType } from "../App";
 
 const TodoForm: React.FC = () => {
   const titleRef = useRef<HTMLInputElement>(null);
@@ -9,7 +12,12 @@ const TodoForm: React.FC = () => {
 
   const [emptyFields, setEmptyFields] = useState(false);
 
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
+  const todos = useSelector((state: stateType) => state.todosReducer.todos);
+
+  useEffect(() => {
+    if (todos.length > 0) dispatch(sendTodoData(todos));
+  }, [todos]);
 
   const createTodoHandler = (event: React.FormEvent) => {
     event.preventDefault(); // Preventing the default behavior of sending request to server

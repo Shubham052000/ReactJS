@@ -6,7 +6,7 @@ import FormModal from "./UI/FormModal";
 
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchTodoData } from "./store/todo-actions";
 import { AppDispatch } from "./store";
 
@@ -22,18 +22,27 @@ export type stateType = {
   };
 };
 
+let isInitial = true;
+
 function App() {
   const [createTodo, setCreateTodo] = useState(false);
+
+  const todos = useSelector((state: stateType) => state.todosReducer.todos);
 
   const dispatch: AppDispatch = useDispatch();
 
   useEffect(() => {
-    /*
-    To-Do: Fix this (setting types for thunks ) 
-    Error: Argument of type '(dispatch: any) => Promise<void>' is not assignable to parameter of type 'AnyAction'.
-    */
     dispatch(fetchTodoData());
   }, [dispatch]);
+
+  useEffect(() => {
+    if (isInitial) {
+      console.log("i ran");
+      isInitial = false;
+      return;
+    }
+  }, [todos, dispatch]);
+
   return (
     <div className="header text-center">
       <h1>The To-do app</h1>
