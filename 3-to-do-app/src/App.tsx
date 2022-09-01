@@ -22,8 +22,6 @@ export type stateType = {
   };
 };
 
-let isInitial = true;
-
 function App() {
   const [createTodo, setCreateTodo] = useState(false);
 
@@ -34,14 +32,6 @@ function App() {
   useEffect(() => {
     dispatch(fetchTodoData());
   }, [dispatch]);
-
-  useEffect(() => {
-    if (isInitial) {
-      console.log("i ran");
-      isInitial = false;
-      return;
-    }
-  }, [todos, dispatch]);
 
   return (
     <div className="header text-center">

@@ -31,7 +31,6 @@ export const fetchTodoData = () => {
 };
 
 export const sendTodoData = (todoData: any) => {
-  console.log(todoData);
   return async () => {
     const sendRequest = async () => {
       const response = await fetch(
