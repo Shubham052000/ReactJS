@@ -7,7 +7,7 @@ import FormModal from "./UI/FormModal";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchTodoData } from "./store/todo-actions";
+import { fetchTodoData, sendTodoData } from "./store/todo-actions";
 import { AppDispatch } from "./store";
 
 export type todoStruct = {
@@ -22,15 +22,21 @@ export type stateType = {
   };
 };
 
+let isInitial = true;
+
 function App() {
   const [createTodo, setCreateTodo] = useState(false);
 
+  const dispatch: AppDispatch = useDispatch();
   const todos = useSelector((state: stateType) => state.todosReducer.todos);
 
-  const dispatch: AppDispatch = useDispatch();
+  useEffect(() => {
+    if (!isInitial) dispatch(sendTodoData(todos));
+  }, [dispatch, todos]);
 
   useEffect(() => {
     dispatch(fetchTodoData());
+    isInitial = false;
   }, [dispatch]);
 
   return (

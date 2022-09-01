@@ -14,10 +14,11 @@ const TodoForm: React.FC = () => {
 
   const dispatch: AppDispatch = useDispatch();
   const todos = useSelector((state: stateType) => state.todosReducer.todos);
+  console.log("todos", todos);
 
   useEffect(() => {
-    if (todos.length > 0) dispatch(sendTodoData(todos));
-  }, [todos]);
+    dispatch(sendTodoData(todos));
+  }, [dispatch, todos]);
 
   const createTodoHandler = (event: React.FormEvent) => {
     event.preventDefault(); // Preventing the default behavior of sending request to server

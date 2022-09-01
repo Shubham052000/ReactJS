@@ -8,7 +8,6 @@ const Todos: React.FC = () => {
   const todosArray = useSelector(
     (state: stateType) => state.todosReducer.todos
   );
-  console.log(todosArray);
   return (
     <ul className="todos">
       {todosArray.length > 0 &&
