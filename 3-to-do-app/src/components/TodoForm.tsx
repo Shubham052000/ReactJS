@@ -13,12 +13,6 @@ const TodoForm: React.FC = () => {
   const [emptyFields, setEmptyFields] = useState(false);
 
   const dispatch: AppDispatch = useDispatch();
-  const todos = useSelector((state: stateType) => state.todosReducer.todos);
-  console.log("todos", todos);
-
-  useEffect(() => {
-    dispatch(sendTodoData(todos));
-  }, [dispatch, todos]);
 
   const createTodoHandler = (event: React.FormEvent) => {
     event.preventDefault(); // Preventing the default behavior of sending request to server
