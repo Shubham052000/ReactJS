@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <AppBar position="relative">
-      <Toolbar>
+      <Toolbar sx={{ my: 2 }}>
         <AnimationIcon fontSize="large" sx={{ mr: 2 }} onClick={goBackToHome} />
         <Typography variant="h3" onClick={goBackToHome}>
           Aniyo
