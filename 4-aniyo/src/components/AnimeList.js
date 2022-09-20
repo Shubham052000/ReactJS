@@ -12,14 +12,24 @@ import {
 
 import { Container } from "@mui/system";
 
+import useFetch from "../hooks/useFetch";
+
 const AnimeList = (props) => {
-  const animeList = props.animeList;
-  console.log("image of 0th element", animeList[0].images.jpg.image_url);
+  const { data: animeList, loading, error } = useFetch(props?.url);
+
+  if (loading) {
+    console.log("Loading...");
+  }
+
+  if (error) {
+    console.log(error);
+  }
+
   return (
     <Container sx={{ py: 8 }}>
       <Grid container spacing={4} marginTop="1rem">
-        {animeList.length > 0 &&
-          animeList.map((anime) => (
+        {animeList?.data.length > 0 &&
+          animeList.data.splice(0, 11).map((anime) => (
             <Grid key={anime.mal_id} item xs={12} sm={4} md={2}>
               <Card
                 sx={{

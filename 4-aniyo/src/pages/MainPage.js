@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
@@ -6,15 +6,6 @@ import { CssBaseline, Typography } from "@mui/material";
 import AnimeList from "../components/AnimeList";
 
 const MainPage = () => {
-  const [topAnime, setTopAnime] = useState([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const fetchedData = await fetch("https://api.jikan.moe/v4/top/anime");
-      const data = await fetchedData.json();
-      data && setTopAnime(data.data);
-    };
-    fetchData();
-  }, []);
   return (
     <>
       <CssBaseline />
@@ -40,11 +31,11 @@ const MainPage = () => {
         <Typography variant="h4" sx={{ ml: 6, mt: 5 }}>
           Top Anime
         </Typography>
-        {topAnime.length > 0 && <AnimeList animeList={topAnime} />}
+        <AnimeList url={"https://api.jikan.moe/v4/top/anime"} />
         <Typography variant="h4" sx={{ ml: 6, mt: 5 }}>
           Upcoming Anime
         </Typography>
-        {/* <AnimeList /> */}
+        <AnimeList url={"https://api.jikan.moe/v4/seasons/upcoming"} />
       </main>
       <footer>
         <Footer />
