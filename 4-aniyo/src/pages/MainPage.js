@@ -9,15 +9,8 @@ const MainPage = () => {
   return (
     <>
       <CssBaseline />
-      <header>
-        <Header />
-      </header>
       <main>
-        <Typography
-          variant="h4"
-          align="center"
-          sx={{ mr: 10, ml: 10, mt: 5, mb: 2 }}
-        >
+        <Typography variant="h4" align="center" sx={{ mt: 5, mb: 2 }}>
           The new anime platform
         </Typography>
         <Typography
@@ -37,9 +30,6 @@ const MainPage = () => {
         </Typography>
         <AnimeList url={"https://api.jikan.moe/v4/seasons/upcoming"} />
       </main>
-      <footer>
-        <Footer />
-      </footer>
     </>
   );
 };
