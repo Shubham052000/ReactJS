@@ -42,6 +42,8 @@ Start the server
 
 **Client:** React
 
+**Back-end:** Firebase
+
 **State-Management:** Context API
 
 
