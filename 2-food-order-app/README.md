@@ -6,7 +6,9 @@ A simple web-app built with ReactJS where a user can choose from a bunch of food
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Screenshot from 2022-09-25 00-53-46](https://user-images.githubusercontent.com/31250818/192115472-2f02ec64-bb67-48fd-bf35-8ccbbd09e63d.png)
+![Screenshot from 2022-09-25 00-53-58](https://user-images.githubusercontent.com/31250818/192115473-65327a45-ec6e-4979-a8d2-0d92273cbb78.png)
+![Screenshot from 2022-09-25 00-54-22](https://user-images.githubusercontent.com/31250818/192115476-4fccc4c2-9496-4748-885b-69df1dc97531.png)
 
 
 ## Run Locally
