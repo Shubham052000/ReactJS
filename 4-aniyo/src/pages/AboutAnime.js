@@ -22,7 +22,7 @@ const AboutAnime = (props) => {
       <CssBaseline />
       <main>
         <Typography variant="h2" align="center" sx={{ my: 5 }}>
-          About specific anime
+          About {anime?.data?.title}
         </Typography>
         <Card
           sx={{
@@ -34,13 +34,13 @@ const AboutAnime = (props) => {
           <CardMedia
             component="img"
             image={anime?.data.images.jpg.large_image_url}
-            alt={anime?.title}
+            alt={anime?.data.title}
           />
           <CardContent sx={{ flexGrow: 1 }}>
             <Typography gutterBottom variant="h5">
               {anime?.title}
             </Typography>
-            <Typography>{anime?.aired?.string}</Typography>
+            <Typography>{anime?.data.aired?.string}</Typography>
           </CardContent>
         </Card>
       </main>
