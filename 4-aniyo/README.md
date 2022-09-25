@@ -1,6 +1,6 @@
-# Aniyo (WIP)
+# Aniyo (WIP)***
 
-Aniyo (currently work in progress) is an anime portal for animeheads which let's you choose from a variety of filters like top-anime, upcoming this season, etc. You can also find all the relevant information about any specific anime like the date-aired, synopsis and other info.
+Aniyo (currently work in progress)*** is an anime portal for animeheads which let's you choose from a variety of filters like top-anime, upcoming this season, etc. You can also find all the relevant information about any specific anime like the date-aired, synopsis and other info.
 
 ## Screenshots
 ![Screenshot from 2022-09-25 14-34-53](https://user-images.githubusercontent.com/31250818/192136829-b1e55f22-2265-4b74-bc18-bf919806bcdc.png)
