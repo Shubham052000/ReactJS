@@ -16,8 +16,8 @@ function App() {
       <header>
         <Header />
       </header>
-      <MainPage />
-      {/* <AboutAnime id={"1"} /> */}
+      {/* <MainPage /> */}
+      <AboutAnime id={"32281"} />
       <footer>
         <Footer />
       </footer>

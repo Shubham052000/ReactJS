@@ -3,6 +3,7 @@ import {
   CardMedia,
   CardContent,
   CssBaseline,
+  Grid,
   Typography,
 } from "@mui/material";
 import React from "react";
@@ -22,13 +23,16 @@ const AboutAnime = (props) => {
       <CssBaseline />
       <main>
         <Typography variant="h2" align="center" sx={{ my: 5 }}>
-          About {anime?.data?.title}
+          {anime?.data?.title}
         </Typography>
         <Card
           sx={{
             height: "100%",
             display: "flex",
             flexDirection: "column",
+            ml: "5rem",
+            width: "20rem",
+            borderRadius: "0.5rem",
           }}
         >
           <CardMedia
@@ -43,6 +47,18 @@ const AboutAnime = (props) => {
             <Typography>{anime?.data.aired?.string}</Typography>
           </CardContent>
         </Card>
+        <Grid sx={{ ml: "5rem", mr: "5rem" }}>
+          <Typography sx={{ mt: "5rem", mb: "2rem" }} variant="h3">
+            Synopsis
+          </Typography>
+          <Typography
+            sx={{ mt: "2rem", mb: "5rem" }}
+            variant="subtitle1"
+            fontSize={"1.25rem"}
+          >
+            {anime?.data.synopsis}
+          </Typography>
+        </Grid>
       </main>
     </>
   );

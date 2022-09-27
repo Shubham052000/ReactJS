@@ -13,6 +13,7 @@ import {
 import { Container } from "@mui/system";
 
 import useFetch from "../hooks/useFetch";
+import AboutAnime from "../pages/AboutAnime";
 
 const AnimeList = (props) => {
   const { data: animeList, loading, error } = useFetch(props?.url);
@@ -24,6 +25,11 @@ const AnimeList = (props) => {
   if (error) {
     console.log(error);
   }
+
+  const viewHandler = (id) => {
+    // To-do: add routing to id
+    console.log(id);
+  };
 
   return (
     <Container sx={{ py: 8 }}>
@@ -50,7 +56,13 @@ const AnimeList = (props) => {
                   <Typography>{anime.aired.string}</Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" color="primary">
+                  <Button
+                    size="small"
+                    color="primary"
+                    onClick={() => {
+                      viewHandler(anime.mal_id);
+                    }}
+                  >
                     View
                   </Button>
                 </CardActions>
