@@ -35,7 +35,7 @@ const AnimeList = (props) => {
     <Container sx={{ py: 8 }}>
       <Grid container spacing={4} marginTop="1rem">
         {animeList?.data.length > 0 &&
-          animeList.data.splice(0, 11).map((anime) => (
+          animeList?.data.splice(0, 11).map((anime) => (
             <Grid key={anime.mal_id} item xs={12} sm={4} md={2}>
               <Card
                 sx={{

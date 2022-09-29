@@ -5,6 +5,8 @@ import {
   CssBaseline,
   Grid,
   Typography,
+  CardActions,
+  Button,
 } from "@mui/material";
 import React from "react";
 import useFetch from "../hooks/useFetch";
@@ -25,30 +27,61 @@ const AboutAnime = (props) => {
         <Typography variant="h2" align="center" sx={{ my: 5 }}>
           {anime?.data?.title}
         </Typography>
-        <Card
-          sx={{
-            height: "100%",
-            display: "flex",
-            flexDirection: "column",
-            ml: "5rem",
-            width: "20rem",
-            borderRadius: "0.5rem",
-          }}
-        >
-          <CardMedia
-            component="img"
-            image={anime?.data.images.jpg.large_image_url}
-            alt={anime?.data.title}
-          />
-          <CardContent sx={{ flexGrow: 1 }}>
-            <Typography gutterBottom variant="h5">
-              {anime?.title}
-            </Typography>
-            <Typography>{anime?.data.aired?.string}</Typography>
-          </CardContent>
-        </Card>
+        <Grid container>
+          <Grid
+            item
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              ml: "5rem",
+              my: "2rem",
+              width: "20rem",
+            }}
+          >
+            <Card
+              sx={{
+                borderRadius: "1rem",
+              }}
+            >
+              <CardMedia
+                component="img"
+                image={anime?.data.images.jpg.large_image_url}
+                alt={anime?.data.title}
+              />
+              <CardContent sx={{ flexGrow: 1 }}>
+                <Typography>Aired: {anime?.data.aired.string}</Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid
+            item
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              ml: "5rem",
+              mr: "5rem",
+              my: "2rem",
+              minWidth: "25rem",
+              width: "80rem",
+              height: "300",
+            }}
+          >
+            <Card
+              sx={{
+                borderRadius: "1rem",
+              }}
+            >
+              <CardMedia
+                component="iframe"
+                title={`trailer ${anime?.data.title}`}
+                src={anime?.data.trailer.embed_url}
+                height={520}
+              />
+            </Card>
+          </Grid>
+        </Grid>
         <Grid sx={{ ml: "5rem", mr: "5rem" }}>
-          <Typography sx={{ mt: "5rem", mb: "2rem" }} variant="h3">
+          <Typography sx={{ mt: "2rem", mb: "2rem" }} variant="h3">
             Synopsis
           </Typography>
           <Typography
