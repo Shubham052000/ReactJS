@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography } from "@mui/material";
 
 import AnimationIcon from "@mui/icons-material/Animation";
 import { useNavigate } from "react-router-dom";
+import AniyoLogo from "./logo.png";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -13,10 +14,12 @@ const Header = () => {
   return (
     <AppBar position="relative">
       <Toolbar sx={{ my: 2 }}>
-        <AnimationIcon fontSize="large" sx={{ mr: 2 }} onClick={goBackToHome} />
-        <Typography variant="h3" onClick={goBackToHome}>
-          Aniyo
-        </Typography>
+        <img
+          src={AniyoLogo}
+          alt="Aniyo Logo"
+          style={{ width: "110px" }}
+          onClick={goBackToHome}
+        />
       </Toolbar>
     </AppBar>
   );
