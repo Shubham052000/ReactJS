@@ -5,21 +5,22 @@ import {
   CssBaseline,
   Grid,
   Typography,
-  CardActions,
-  Button,
 } from "@mui/material";
 import React from "react";
 import useFetch from "../hooks/useFetch";
+import { useParams } from "react-router-dom";
 
-const AboutAnime = (props) => {
+const AboutAnime = () => {
+  const { id } = useParams();
   const {
     data: anime,
     error,
     loading,
-  } = useFetch(`https://api.jikan.moe/v4/anime/${props.id}`);
+  } = useFetch(`https://api.jikan.moe/v4/anime/${id}`);
   if (!loading && !error && anime) {
     console.log(anime.data);
   }
+
   return (
     <>
       <CssBaseline />

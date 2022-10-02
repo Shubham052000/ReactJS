@@ -2,11 +2,12 @@ import React from "react";
 import { AppBar, Toolbar, Typography } from "@mui/material";
 
 import AnimationIcon from "@mui/icons-material/Animation";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+  const navigate = useNavigate();
   const goBackToHome = () => {
-    //To-do: create a method to push homepage
-    console.log("Welcome to Aniyo!!!");
+    navigate("/");
   };
 
   return (

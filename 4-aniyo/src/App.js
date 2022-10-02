@@ -9,6 +9,8 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
+import { Route, Routes } from "react-router-dom";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -17,7 +19,12 @@ function App() {
         <Header />
       </header>
       {/* <MainPage /> */}
-      <AboutAnime id={"32281"} />
+      {/* <AboutAnime id={"32281"} /> */}
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/about/:id" element={<AboutAnime />} />
+        <Route path="*" element={<ErrorPage />} />
+      </Routes>
       <footer>
         <Footer />
       </footer>

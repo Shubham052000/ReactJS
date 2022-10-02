@@ -1,7 +1,4 @@
 import React from "react";
-
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import { CssBaseline, Typography } from "@mui/material";
 import AnimeList from "../components/AnimeList";
 

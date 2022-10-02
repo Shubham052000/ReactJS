@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Grid,
   Card,
@@ -9,14 +8,13 @@ import {
   Typography,
   Button,
 } from "@mui/material";
-
 import { Container } from "@mui/system";
-
 import useFetch from "../hooks/useFetch";
-import AboutAnime from "../pages/AboutAnime";
+import { useNavigate } from "react-router-dom";
 
 const AnimeList = (props) => {
   const { data: animeList, loading, error } = useFetch(props?.url);
+  const navigate = useNavigate();
 
   if (loading) {
     console.log("Loading...");
@@ -28,7 +26,7 @@ const AnimeList = (props) => {
 
   const viewHandler = (id) => {
     // To-do: add routing to id
-    console.log(id);
+    navigate(`/about/${id}`);
   };
 
   return (
