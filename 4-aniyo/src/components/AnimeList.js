@@ -1,16 +1,19 @@
 import React from "react";
 import {
-  Grid,
+  Button,
   Card,
   CardMedia,
   CardContent,
   CardActions,
+  CircularProgress,
+  Grid,
   Typography,
-  Button,
+  Box,
 } from "@mui/material";
 import { Container } from "@mui/system";
 import useFetch from "../hooks/useFetch";
 import { useNavigate } from "react-router-dom";
+import { formatName } from "../utils/anime-utils";
 
 const AnimeList = (props) => {
   const { data: animeList, loading, error } = useFetch(props?.url);
@@ -25,15 +28,20 @@ const AnimeList = (props) => {
   }
 
   const viewHandler = (id) => {
-    // To-do: add routing to id
     navigate(`/about/${id}`);
   };
 
   return (
-    <Container sx={{ py: 8 }}>
-      <Grid container spacing={4} marginTop="1rem">
-        {animeList?.data.length > 0 &&
-          animeList?.data.splice(0, 11).map((anime) => (
+    <Container sx={{ py: 1 }}>
+      <Typography variant="h4" sx={{ mt: 5, mb: 5 }}>
+        {props.type}
+      </Typography>
+      <Grid container spacing={5} justifyContent={"center"}>
+        {loading && !error && <CircularProgress />}
+        {!loading &&
+          !error &&
+          animeList?.data.length > 0 &&
+          animeList?.data.slice(0, 11).map((anime) => (
             <Grid key={anime.mal_id} item xs={12} sm={4} md={2}>
               <Card
                 sx={{
@@ -45,11 +53,11 @@ const AnimeList = (props) => {
                 <CardMedia
                   component="img"
                   image={anime.images.jpg.image_url}
-                  alt={anime.title}
+                  alt={formatName(anime.title)}
                 />
                 <CardContent sx={{ flexGrow: 1 }}>
                   <Typography gutterBottom variant="h5">
-                    {anime.title}
+                    {formatName(anime.title)}
                   </Typography>
                   <Typography>{anime.aired.string}</Typography>
                 </CardContent>

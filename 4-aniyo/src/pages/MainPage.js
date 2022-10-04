@@ -7,7 +7,7 @@ const MainPage = () => {
     <>
       <CssBaseline />
       <main>
-        <Typography variant="h4" align="center" sx={{ mt: 5, mb: 2 }}>
+        <Typography variant="h4" align="center" sx={{ mt: 20, mb: 2 }}>
           The new anime platform
         </Typography>
         <Typography
@@ -18,14 +18,14 @@ const MainPage = () => {
         >
           Discover and share your favorite anime with Aniyo.
         </Typography>
-        <Typography variant="h4" sx={{ ml: 6, mt: 5 }}>
-          Top Anime
-        </Typography>
-        <AnimeList url={"https://api.jikan.moe/v4/top/anime"} />
-        <Typography variant="h4" sx={{ ml: 6, mt: 5 }}>
-          Upcoming Anime
-        </Typography>
-        <AnimeList url={"https://api.jikan.moe/v4/seasons/upcoming"} />
+        <AnimeList
+          type="Top Anime"
+          url={"https://api.jikan.moe/v4/top/anime"}
+        />
+        <AnimeList
+          type="Upcoming Anime"
+          url={"https://api.jikan.moe/v4/seasons/upcoming"}
+        />
       </main>
     </>
   );

@@ -18,8 +18,6 @@ function App() {
       <header>
         <Header />
       </header>
-      {/* <MainPage /> */}
-      {/* <AboutAnime id={"32281"} /> */}
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about/:id" element={<AboutAnime />} />

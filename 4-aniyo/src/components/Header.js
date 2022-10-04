@@ -1,7 +1,6 @@
 import React from "react";
-import { AppBar, Toolbar, Typography } from "@mui/material";
+import { AppBar, Toolbar } from "@mui/material";
 
-import AnimationIcon from "@mui/icons-material/Animation";
 import { useNavigate } from "react-router-dom";
 import AniyoLogo from "./logo.png";
 
@@ -12,7 +11,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="relative">
+    <AppBar position="absolute">
       <Toolbar sx={{ my: 2 }}>
         <img
           src={AniyoLogo}
