@@ -9,6 +9,7 @@ import AnimeList from "../components/AnimeList";
 import { Box } from "@mui/system";
 
 const top100Films = [{ title: "Jujutsu kaisen" }, { title: "Tokyo Ghoul" }];
+// TO-DO: fetch from this https://api.jikan.moe/v4/anime?q=
 const MainPage = () => {
   return (
     <>
