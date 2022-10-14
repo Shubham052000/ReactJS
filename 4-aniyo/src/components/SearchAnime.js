@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { useNavigate } from "react-router-dom";
 import { Autocomplete, TextField } from "@mui/material";
@@ -6,15 +6,24 @@ import { Box } from "@mui/system";
 
 const SearchAnime = () => {
   const navigate = useNavigate();
+  const [searchedAnime, setSearchedAnime] = useState("");
   const [fetchedAnimeList, setFetchedAnimeList] = useState([]);
 
-  const searchHandler = (event) => {
-    if (event.target.value.length >= 3) {
-      fetch(`https://api.jikan.moe/v4/anime?q=${event.target.value}`)
+  useEffect(() => {
+    let timer = setTimeout(() => {
+      searchHandler(searchedAnime);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, [searchedAnime]);
+
+  const searchHandler = (searchedString) => {
+    if (searchedString.length >= 3) {
+      fetch(`https://api.jikan.moe/v4/anime?q=${searchedString}`)
         .then((response) => response.json())
         .then((data) => setFetchedAnimeList(data.data));
     }
   };
+
   const linkToAnime = (event) => {
     const id = fetchedAnimeList.filter(
       (anime) => anime.title === event.target.textContent
@@ -28,7 +37,7 @@ const SearchAnime = () => {
       <Autocomplete
         id="anime-search-box"
         freeSolo
-        onInputChange={searchHandler}
+        onInputChange={(e) => setSearchedAnime(e.target.value)}
         onChange={(e) => linkToAnime(e)}
         options={
           fetchedAnimeList.length > 0
