@@ -11,6 +11,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import { Route, Routes } from "react-router-dom";
 import ErrorPage from "./pages/ErrorPage";
+import ConnectWithMe from "./pages/ConnectWithMe";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<MainPage />} />
+        <Route path="/connect" element={<ConnectWithMe />} />
         <Route path="/about/:id" element={<AboutAnime />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

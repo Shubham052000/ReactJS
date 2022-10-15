@@ -22,6 +22,11 @@ const MainPage = () => {
         </Typography>
         <SearchAnime />
         <AnimeList
+          type="Airing This Season"
+          url={"https://api.jikan.moe/v4/seasons/now"}
+        />
+
+        <AnimeList
           type="Top Anime"
           url={"https://api.jikan.moe/v4/top/anime"}
         />

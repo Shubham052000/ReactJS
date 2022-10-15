@@ -22,9 +22,6 @@ const Header = () => {
             onClick={goBackToHome}
           />
         </Box>
-        {/* <Box sx={{ width: "12rem" }}>
-          <TextField variant="standard" label="Search" />
-        </Box> */}
       </Toolbar>
     </AppBar>
   );

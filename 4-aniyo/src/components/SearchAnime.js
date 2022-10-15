@@ -33,7 +33,13 @@ const SearchAnime = () => {
   };
 
   return (
-    <Box display={"flex"} justifyContent="center" mt={5}>
+    <Box
+      display={"flex"}
+      justifyContent="center"
+      mt={5}
+      ml={"1rem"}
+      mr={"1rem"}
+    >
       <Autocomplete
         id="anime-search-box"
         freeSolo

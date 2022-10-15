@@ -8,7 +8,6 @@ import {
   CircularProgress,
   Grid,
   Typography,
-  Box,
 } from "@mui/material";
 import { Container } from "@mui/system";
 import useFetch from "../hooks/useFetch";
@@ -42,7 +41,7 @@ const AnimeList = (props) => {
           !error &&
           animeList?.data.length > 0 &&
           animeList?.data.slice(0, 11).map((anime) => (
-            <Grid key={anime.mal_id} item xs={12} sm={4} md={2}>
+            <Grid key={anime.mal_id} item xs={10} sm={4} md={2}>
               <Card
                 sx={{
                   height: "100%",
