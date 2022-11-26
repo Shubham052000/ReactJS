@@ -3,11 +3,18 @@
 Aniyo (currently work in progress)*** is an anime portal for animeheads which let's you choose from a variety of filters like top-anime, upcoming this season, etc. You can also find all the relevant information about any specific anime like the date-aired, synopsis and other info.
 
 ## Screenshots
-![Screenshot from 2022-09-25 14-34-53](https://user-images.githubusercontent.com/31250818/192136829-b1e55f22-2265-4b74-bc18-bf919806bcdc.png)
 
-![Screenshot from 2022-09-25 14-35-15](https://user-images.githubusercontent.com/31250818/192136831-d72696ef-de4d-416b-ba5c-53237fd4f4e2.png)
+![Screenshot from 2022-11-26 16-14-10](https://user-images.githubusercontent.com/31250818/204084922-2c33a184-a54a-4ecd-997b-be6ef5a5ff41.png)
 
-![Screenshot from 2022-09-25 14-35-24](https://user-images.githubusercontent.com/31250818/192136833-ffe6c539-27fc-473c-9f79-89d8a66389d1.png)
+![Screenshot from 2022-11-26 16-14-30](https://user-images.githubusercontent.com/31250818/204084943-f53b676f-aa00-46e5-b265-b3fa1dfdb750.png)
+
+![Screenshot from 2022-11-26 16-14-40](https://user-images.githubusercontent.com/31250818/204084968-7641901f-0fb5-492c-9709-b3c09872930c.png)
+
+![Screenshot from 2022-11-26 16-15-08](https://user-images.githubusercontent.com/31250818/204084974-472ace04-1638-4126-9d92-50dfe07dae44.png)
+
+![Screenshot from 2022-11-26 16-15-49](https://user-images.githubusercontent.com/31250818/204084979-5d1ebcd7-9946-486e-bd25-4152e971238d.png)
+
+![Screenshot from 2022-11-26 16-16-06](https://user-images.githubusercontent.com/31250818/204084985-6805e861-2865-4099-8323-6ab9a037693b.png)
 
 ## Run Locally
 
