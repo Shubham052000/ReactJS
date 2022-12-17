@@ -19,7 +19,6 @@ const AnimeList = (props) => {
   const navigate = useNavigate();
 
   if (loading) {
-    console.log("Loading...");
   }
 
   if (error) {
@@ -39,8 +38,8 @@ const AnimeList = (props) => {
         {loading && !error && <CircularProgress />}
         {!loading &&
           !error &&
-          animeList?.data.length > 0 &&
-          animeList?.data.slice(0, 11).map((anime) => (
+          animeList?.data?.length > 0 &&
+          animeList?.data?.slice(0, 11).map((anime) => (
             <Grid key={anime.mal_id} item xs={10} sm={4} md={2}>
               <Card
                 sx={{

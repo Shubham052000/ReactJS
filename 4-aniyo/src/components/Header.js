@@ -12,13 +12,13 @@ const Header = () => {
   };
 
   return (
-    <AppBar position="absolute">
+    <AppBar>
       <Toolbar sx={{ my: 2 }}>
-        <Box sx={{ flexGrow: 1 }}>
+        <Box>
           <img
             src={AniyoLogo}
             alt="Aniyo Logo"
-            style={{ width: "110px" }}
+            style={{ width: "110px", cursor: "pointer" }}
             onClick={goBackToHome}
           />
         </Box>
