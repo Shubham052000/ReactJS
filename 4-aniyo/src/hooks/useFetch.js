@@ -7,7 +7,13 @@ const useFetch = (url) => {
     error: null,
   });
 
-  const fetchNow = async (url) => {
+  useEffect(() => {
+    if (url) {
+      fetchNow(url);
+    }
+  }, [url]);
+
+  async function fetchNow(url) {
     setStatus({ loading: true });
     try {
       const fetchedData = await fetch(url);
@@ -16,13 +22,7 @@ const useFetch = (url) => {
     } catch (error) {
       setStatus({ loading: false, error: error });
     }
-  };
-
-  useEffect(() => {
-    if (url) {
-      fetchNow(url);
-    }
-  }, [url]);
+  }
 
   return { ...status };
 };

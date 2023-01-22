@@ -16,9 +16,7 @@ import ConnectWithMe from "./pages/ConnectWithMe";
 function App() {
   return (
     <>
-      <header>
-        <Header />
-      </header>
+      <Header />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/connect" element={<ConnectWithMe />} />

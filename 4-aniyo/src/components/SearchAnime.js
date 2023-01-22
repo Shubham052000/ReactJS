@@ -52,7 +52,10 @@ const SearchAnime = () => {
         }
         renderInput={(params) => (
           <>
-            <TextField {...params} label="Search" />
+            <TextField
+              {...params}
+              label="Search new or yours favorites here..."
+            />
           </>
         )}
         sx={{

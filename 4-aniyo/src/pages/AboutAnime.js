@@ -27,7 +27,7 @@ const AboutAnime = () => {
       {!error && !loading && (
         <>
           <Typography variant="h2" align="center" sx={{ mt: 20, mb: 5 }}>
-            {anime?.data?.title}
+            {anime?.data.title}
           </Typography>
 
           {/* Anime Image & Trailer Contaner*/}
@@ -72,14 +72,14 @@ const AboutAnime = () => {
                   height={520}
                 />
                 <CardContent>
-                  <Typography>Trailer: {anime?.data?.title}</Typography>
+                  <Typography>Trailer: {anime?.data.title}</Typography>
                 </CardContent>
               </Card>
             )}
           </Box>
           <Grid sx={{ ml: "5rem", mr: "5rem" }}>
             <Typography sx={{ mt: "2rem", mb: "2rem" }} variant="h3">
-              Synopsis
+              About {anime?.data.title}
             </Typography>
             <Typography
               sx={{ mt: "2rem", mb: "5rem" }}

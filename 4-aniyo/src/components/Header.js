@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <AppBar>
+    <AppBar sx={{ backgroundColor: "#343a40" }}>
       <Toolbar sx={{ my: 2 }}>
         <Box>
           <img

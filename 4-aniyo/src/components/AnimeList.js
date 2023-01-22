@@ -1,10 +1,8 @@
 import React from "react";
 import {
-  Button,
   Card,
   CardMedia,
   CardContent,
-  CardActions,
   CircularProgress,
   Grid,
   Typography,
@@ -30,22 +28,26 @@ const AnimeList = (props) => {
   };
 
   return (
-    <Container sx={{ py: 1 }}>
-      <Typography variant="h4" sx={{ mt: 5, mb: 5 }}>
+    <Container maxWidth={"xl"}>
+      <Typography variant="h4" sx={{ my: 5 }}>
         {props.type}
       </Typography>
-      <Grid container spacing={5} justifyContent={"center"}>
+      <Grid container spacing={3} justifyContent={"center"}>
         {loading && !error && <CircularProgress />}
         {!loading &&
           !error &&
           animeList?.data?.length > 0 &&
           animeList?.data?.slice(0, 11).map((anime) => (
-            <Grid key={anime.mal_id} item xs={10} sm={4} md={2}>
+            <Grid key={anime.mal_id} item xs={8} sm={4} md={2}>
               <Card
                 sx={{
                   height: "100%",
                   display: "flex",
                   flexDirection: "column",
+                  cursor: "pointer",
+                }}
+                onClick={() => {
+                  viewHandler(anime.mal_id);
                 }}
               >
                 <CardMedia
@@ -59,17 +61,6 @@ const AnimeList = (props) => {
                   </Typography>
                   <Typography>{anime.aired.string}</Typography>
                 </CardContent>
-                <CardActions>
-                  <Button
-                    size="small"
-                    color="primary"
-                    onClick={() => {
-                      viewHandler(anime.mal_id);
-                    }}
-                  >
-                    View
-                  </Button>
-                </CardActions>
               </Card>
             </Grid>
           ))}

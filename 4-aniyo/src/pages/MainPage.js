@@ -9,13 +9,17 @@ const MainPage = () => {
     <>
       <CssBaseline />
       <main>
-        <Typography variant="h4" align="center" sx={{ mt: 20, mb: 2 }}>
-          The new anime platform
+        <Typography
+          variant="h1"
+          align="center"
+          sx={{ pt: 20, mb: 2, fontSize: 64 }}
+        >
+          Your new Anime-ctionary
         </Typography>
         <Typography
-          variant="h6"
+          variant="h4"
           align="center"
-          sx={{ mr: 10, ml: 10, color: "text.secondary" }}
+          sx={{ mr: 10, ml: 10, color: "text.secondary", fontSize: 24 }}
           paragraph
         >
           Discover and share your favorite anime with Aniyo.
