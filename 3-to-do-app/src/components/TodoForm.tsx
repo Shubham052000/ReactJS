@@ -1,10 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 
-import { useDispatch, useSelector } from "react-redux";
-import { sendTodoData } from "../store/todo-actions";
+import { useDispatch } from "react-redux";
 import { todoActions } from "../store/todo-slice";
 import { AppDispatch } from "../store";
-import { stateType } from "../App";
 
 const TodoForm: React.FC = () => {
   const titleRef = useRef<HTMLInputElement>(null);
