@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <Grid container sx={{ bgcolor: "#343a40", p: 6, color: "white", mt: 10 }}>
+    <Grid container sx={{ bgcolor: "#1e293b", p: 6, color: "white", mt: 10 }}>
       <Grid item xs={12} lg={10}>
         <Typography variant="h6" gutterBottom>
           {" "}

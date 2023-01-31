@@ -19,23 +19,20 @@ const AboutAnime = () => {
     loading,
   } = useFetch(`https://api.jikan.moe/v4/anime/${id}`);
 
-  console.log("link here =>", anime?.data.trailer.embed_url);
+  console.log("anime data =>", anime?.data);
 
   return (
     <>
       <CssBaseline />
-      {!error && !loading && (
+      {!error && !loading && anime?.data && (
         <>
-          <Typography variant="h2" align="center" sx={{ mt: 20, mb: 5 }}>
-            {anime?.data.title}
-          </Typography>
-
           {/* Anime Image & Trailer Contaner*/}
           <Box
             sx={{
               display: "flex",
               justifyContent: "center",
               flexWrap: "wrap",
+              mt: 20,
               mx: "5rem",
               gap: "5rem",
             }}
@@ -77,16 +74,95 @@ const AboutAnime = () => {
               </Card>
             )}
           </Box>
-          <Grid sx={{ ml: "5rem", mr: "5rem" }}>
-            <Typography sx={{ mt: "2rem", mb: "2rem" }} variant="h3">
-              About {anime?.data.title}
+          <Grid sx={{ ml: "5rem", mr: "5rem", py: "2rem" }}>
+            <Typography
+              sx={{ mt: "2rem", mb: "1rem", fontWeight: 400, fontSize: 40 }}
+              variant="h1"
+            >
+              {anime?.data.title}
             </Typography>
             <Typography
-              sx={{ mt: "2rem", mb: "5rem" }}
+              sx={{
+                display: "inline-block",
+                fontWeight: 500,
+                fontSize: 20,
+              }}
+              variant="subtitle2"
+            >
+              {"❓ "}Genre:&nbsp;
+            </Typography>
+            <Typography
+              sx={{
+                display: "inline-block",
+                fontStyle: "oblique",
+                fontSize: 18,
+              }}
+              variant="body1"
+            >
+              {`${anime.data?.genres.map((genre) => genre.name).join(", ")}`}
+            </Typography>
+            <br />
+            <Typography
+              sx={{
+                display: "inline-block",
+                fontWeight: 500,
+                fontSize: 20,
+              }}
+              variant="subtitle2"
+            >
+              {"📺 "}
+              Rating:&nbsp;
+            </Typography>
+            <Typography
+              sx={{
+                display: "inline-block",
+                fontSize: 18,
+              }}
+              variant="body1"
+            >
+              {anime.data?.rating}
+            </Typography>
+            <br />
+            <Typography
+              sx={{
+                display: "inline-block",
+                fontWeight: 500,
+                fontSize: 20,
+              }}
+              variant="subtitle2"
+            >
+              {"⭐ "}Score:&nbsp;
+            </Typography>
+            <Typography
+              sx={{
+                display: "inline-block",
+                fontSize: 18,
+              }}
+              variant="body1"
+            >
+              {anime.data?.score
+                ? `${anime.data?.score} (${anime.data?.scored_by})`
+                : "Not yet rated"}
+            </Typography>
+            <br />
+            <Typography
+              sx={{
+                mt: "2rem",
+                mb: "1rem",
+                display: "block",
+              }}
+              variant="subtitle2"
+              fontSize={"1.5rem"}
+            >
+              Synopsis{" 👀"}
+            </Typography>
+
+            <Typography
+              sx={{ mb: "5rem" }}
               variant="subtitle1"
               fontSize={"1.25rem"}
             >
-              {anime?.data.synopsis}
+              {anime.data?.synopsis}
             </Typography>
           </Grid>
         </>
