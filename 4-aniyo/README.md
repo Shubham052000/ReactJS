@@ -4,17 +4,13 @@ Aniyo (currently work in progress)*** is an anime portal for animeheads which le
 
 ## Screenshots
 
-![Screenshot from 2022-11-26 16-14-10](https://user-images.githubusercontent.com/31250818/204084922-2c33a184-a54a-4ecd-997b-be6ef5a5ff41.png)
+https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2017-43-12.png
 
-![Screenshot from 2022-11-26 16-14-30](https://user-images.githubusercontent.com/31250818/204084943-f53b676f-aa00-46e5-b265-b3fa1dfdb750.png)
+https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-00-43.png
 
-![Screenshot from 2022-11-26 16-14-40](https://user-images.githubusercontent.com/31250818/204084968-7641901f-0fb5-492c-9709-b3c09872930c.png)
+https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-01-48.png
 
-![Screenshot from 2022-11-26 16-15-08](https://user-images.githubusercontent.com/31250818/204084974-472ace04-1638-4126-9d92-50dfe07dae44.png)
-
-![Screenshot from 2022-11-26 16-15-49](https://user-images.githubusercontent.com/31250818/204084979-5d1ebcd7-9946-486e-bd25-4152e971238d.png)
-
-![Screenshot from 2022-11-26 16-16-06](https://user-images.githubusercontent.com/31250818/204084985-6805e861-2865-4099-8323-6ab9a037693b.png)
+https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-02-12.png
 
 ## Run Locally
 
