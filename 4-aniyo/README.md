@@ -4,13 +4,14 @@ Aniyo (currently work in progress)*** is an anime portal for animeheads which le
 
 ## Screenshots
 
-https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2017-43-12.png
+![App Screenshot](https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2017-43-12.png)
 
-https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-00-43.png
+![App Screenshot](https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-00-43.png)
 
-https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-01-48.png
+![App Screenshot](https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-01-48.png)
 
-https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-02-12.png
+![App Screenshot](https://raw.githubusercontent.com/Shubham052000/ReactJS/main/4-aniyo/screenshots/Screenshot%20from%202023-02-25%2018-02-12.png)
+
 
 ## Run Locally
 
